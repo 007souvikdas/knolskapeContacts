@@ -15,6 +15,13 @@ function listConnectionNames(auth) {
         personFields: 'names,emailAddresses,phoneNumbers,photos',
     });
 }
+function getUserProfile(auth) {
+    var oauth2 = google.oauth2({ auth: auth, version: 'v2' });
+    return oauth2.userinfo.v2.me.get({
+        resourceName: 'people/me',
+    });
+}
+
 
 function parsePersonDataFromConnections(connections) {
     const personContacts = [];
@@ -48,6 +55,7 @@ function parsePersonDataFromConnections(connections) {
 
 exports.getContacts = (req, res, next) => {
     const { token } = req.cookies;
+    let apiResponse = {};
     if (!token) {
         return res.status(400).send('Missing token');
     }
@@ -72,6 +80,17 @@ exports.getContacts = (req, res, next) => {
         }
         const tokenFromDB = tokens[0];
         oAuth2Client.setCredentials(tokenFromDB);
+        return getUserProfile(oAuth2Client);
+    }).then((result) => {
+        console.log(result);
+        if (!result.data) {
+            return res.status(400).send('Bad request');
+        }
+        const data = result.data;
+        apiResponse.userName = data.name;
+        apiResponse.userEmail = data.email;
+        apiResponse.photoUrl = data.picture;
+
         return listConnectionNames(oAuth2Client);
     }).then((result) => {
         let personContacts = [];
@@ -82,7 +101,8 @@ exports.getContacts = (req, res, next) => {
         if (connections) {
             personContacts = parsePersonDataFromConnections(connections);
         }
-        return res.status(200).send(personContacts);
+        apiResponse.contacts = personContacts;
+        return res.status(200).send(apiResponse);
     }).catch((err) => {
         console.log('error while fetching the token', err);
         res.status(400).send('Bad request');

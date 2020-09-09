@@ -4,7 +4,9 @@ const uuIdv4 = require('uuid/v4');
 
 const config = require('../../../config/configuration');
 
-const SCOPES = ['https://www.googleapis.com/auth/contacts.readonly'];
+const SCOPES = ['https://www.googleapis.com/auth/contacts.readonly',
+                'https://www.googleapis.com/auth/userinfo.profile',
+                'https://www.googleapis.com/auth/userinfo.email'];
 const clientSecret = config.get('security:client_secret');
 const clientId = config.get('security:clientId');
 const redirectUris = config.get('security:redirectUrl');

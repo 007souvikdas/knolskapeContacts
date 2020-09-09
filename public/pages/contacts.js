@@ -21,13 +21,19 @@ window.onload = (event) => {
 
 function getContacts() {
     const contactsDiv = document.getElementById('contactsDiv');
+    const userName = document.getElementById('userName');
+    const userEmail = document.getElementById('userEmail');
+    const userImage = document.getElementById('userPhoto');
     const xhttp = new XMLHttpRequest();
-
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState === XMLHttpRequest.DONE) {
             if (xhttp.status == 200) {
                 const res = JSON.parse(xhttp.response);
-                for (const individualContact of res) {
+
+                userName.innerText = res.userName;
+                userImage.src = res.photoUrl;
+                userEmail.innerText = res.userEmail;
+                for (const individualContact of res.contacts) {
                     const contactDiv = document.createElement('div');
 
                     const img = document.createElement('img');
