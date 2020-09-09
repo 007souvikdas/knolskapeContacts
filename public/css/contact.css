@@ -1,0 +1,243 @@
+body{
+    background: #eff7f9;
+}
+
+.top-banner{
+    position: absolute;
+    width: 100%;
+    height: 13%;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(90.21deg, #053ED1 0%, #0F4EAC 100%);
+
+}
+.user-info{
+    position: absolute;
+    width: 20%;
+    height: 80%;
+    left: 4%;
+    top: 10px;
+
+}
+
+.user-img{
+    position: absolute;
+    width: 25%;
+    height: 85%;
+    top: 9%;
+
+    background: url(.png), #C4C4C4;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.user-name{
+    position: absolute;
+    width: 32%;
+    height: 27px;
+    left: 32%;
+    
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.08em;
+
+    color: #FFFFFF;
+
+}
+
+.user-email{
+    position: absolute;
+    
+    left: 32%;
+    top: 40%;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.08em;
+
+    color: #FFFFFF;
+}
+
+.logout{
+    position: absolute;
+    left: 94%;    
+    top: 30%;   
+
+}
+
+.contact-holder{
+    position: absolute;
+    width: 80%;
+    height: 90%;
+    left: 10%;
+    top: 16%;
+}
+
+.static-contact{
+
+    position: absolute;
+    /* width: 136px;
+    height: 39px;
+    left: 189px;
+    top: 110px; */
+    margin-top: 1%;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+
+    color: #053ED1;
+
+}
+
+.static-number-contact{
+    left:11%
+}
+.static-header{
+    position: absolute;
+    /* width: 36px; */
+    /* height: 18px; */
+    
+    /* top: 165px; */
+    top: -0.6%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.08em;
+    color: #B0C6FF;
+}
+
+.name-header{
+    position: relative;
+    left: 9%;
+}
+
+.email-header{
+    left: 50%;
+}
+
+.phone-header{
+    left: 80%;
+}
+.header-div{
+    position: relative;
+}
+.actual-contact-div{
+    position: relative;
+    top: 10%;
+}
+
+.individual-contact-div{
+    position: relative;
+    width: 100%;
+    height: 10%;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 6px rgba(5, 62, 209, 0.14);
+    border-radius: 8px;
+    margin: 0 0 10px 10px;
+}
+
+.individual-contact-img{
+    position: relative;
+    width: 4%;
+    /* height: 40px; */
+    left: 2%;
+    top: 8px;
+    background: url(.jpg);
+    border: 1px solid #FF0000;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.individual-contact-name{
+    position: absolute;
+    /* width: 127px; */
+    /* height: 21px; */
+    left: 8%;
+    top: 10%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.08em;
+    color: #000000;
+}
+
+.individual-contact-email{
+    position: absolute;
+    /* width: 175px; */
+    /* height: 18px; */
+    left: 50%;
+    top: 10%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 160x;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.08em;
+    color: #000000;
+}
+
+.individual-contact-phone{
+    position: absolute;
+    /* width: 175px; */
+    /* height: 18px; */
+    left: 80%;
+    top: 10%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 160x;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.08em;
+    color: #000000;
+}
+
+.background-img{
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    left: 0px; 
+    top: 0px; 
+    z-index: -1;
+}
+
+.stretch {
+    width:100%;
+    height:100%;
+}

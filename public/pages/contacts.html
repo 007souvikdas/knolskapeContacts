@@ -1,13 +1,35 @@
 <html>
 
-<body>
-    <Button id="logout">Logout</Button>
-    <h1>Contacts page</h1>
-    <p id="userName"></p>
-    <p id="userEmail"></p>
-    <img id="userPhoto" />
+<head>
+    <title>
+        Knolskape contacts
+    </title>
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
 
-    <div id="contactsDiv"></div>
+<body>
+    <div id="background-img">
+        <img class="stretch" src="../images/background.png" />
+    </div>
+    <div class="top-banner">
+        <div class="user-info">
+            <img class="user-img" id="userPhoto" />
+            <p class="user-name" id="userName"></p>
+            <p class="user-email" id="userEmail"></p>
+        </div>
+        <img src="../images/logout.png" class="logout" id="logout" />
+    </div>
+    <div class="contact-holder">
+        <p class="static-contact">Contacts</p>
+        <p class="static-contact static-number-contact" id="numberContact"></p>
+        <div class="actual-contact-div" id="contactsDiv">
+            <div class="header-div">
+                <p class="static-header name-header">NAME</p>
+                <p class="static-header email-header">EMAIL</p>
+                <p class="static-header phone-header">PHONE NUMBER</p>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="./contacts.js"></script>
 

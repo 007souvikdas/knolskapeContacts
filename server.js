@@ -16,14 +16,14 @@ app.use('/knol', express.static('public', {
     extensions: ['html'],
 }));
 
-app.get('knol/ping', (req, res, next) => {
+app.get('/knol/ping', (req, res, next) => {
     res.send(util.createResponse(true, "pong"));
 });
 
 require('./config/dependency')(app);
 
 app.get('/knol/pages/*', function (req, res) {
-    res.redirect(`knol/pages/error`);
+    res.redirect(`/knol/pages/error`);
 });
 
 server.listen(PORT, () => {

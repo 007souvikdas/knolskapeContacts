@@ -24,6 +24,8 @@ function getContacts() {
     const userName = document.getElementById('userName');
     const userEmail = document.getElementById('userEmail');
     const userImage = document.getElementById('userPhoto');
+    const numberContact = document.getElementById('numberContact');
+
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState === XMLHttpRequest.DONE) {
@@ -33,24 +35,30 @@ function getContacts() {
                 userName.innerText = res.userName;
                 userImage.src = res.photoUrl;
                 userEmail.innerText = res.userEmail;
+                numberContact.innerText = "(" + res.contacts.length + ")";
                 for (const individualContact of res.contacts) {
                     const contactDiv = document.createElement('div');
+                    contactDiv.className = "individual-contact-div";
 
                     const img = document.createElement('img');
+                    img.className = "individual-contact-img";
                     img.src = individualContact.photoUrl;
                     contactDiv.appendChild(img);
 
                     const name = document.createElement('p');
+                    name.className = "individual-contact-name";
                     name.innerText = individualContact.name;
                     contactDiv.appendChild(name);
 
-                    const phoneNo = document.createElement('p');
-                    phoneNo.innerText = individualContact.phoneNumber;
-                    contactDiv.appendChild(phoneNo);
-
                     const emailAddress = document.createElement('p');
+                    emailAddress.className = "individual-contact-email";
                     emailAddress.innerText = individualContact.emailAddress || '-';
                     contactDiv.appendChild(emailAddress);
+
+                    const phoneNo = document.createElement('p');
+                    phoneNo.className = "individual-contact-phone";
+                    phoneNo.innerText = individualContact.phoneNumber;
+                    contactDiv.appendChild(phoneNo);
 
                     contactsDiv.appendChild(contactDiv);
                 }

@@ -82,7 +82,6 @@ exports.getContacts = (req, res, next) => {
         oAuth2Client.setCredentials(tokenFromDB);
         return getUserProfile(oAuth2Client);
     }).then((result) => {
-        console.log(result);
         if (!result.data) {
             return res.status(400).send('Bad request');
         }
