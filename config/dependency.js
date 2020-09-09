@@ -7,6 +7,6 @@ module.exports = (app) => {
     app.use(cookieParser());
 
     // Registring Controller Modules
-    app.use('/knol/api/v1/login/', require('../module/controller/login')(app).router);
+    app.use('/knol/api/v1/user/', require('../module/controller/login')(app).router);
     app.use('/knol/api/v1/contacts/', require('../module/controller/contacts')(app).router);
 };
