@@ -1,0 +1,32 @@
+{
+    "server": {
+        "port": "5611"
+    },
+    "security": {
+        "apiKey": "AIzaSyDvUxj0iSNB9tnOzPApB4gUP6fhw58ixaw",
+        "clientId": "524323970496-6ri5o8nnd3elmb8nhsfm3g26jh65sis4.apps.googleusercontent.com",
+        "client_secret": "xIcmoa-YkS8_tQ3iLh0svuIK",
+        "redirectUrl": "http://localhost:5611/knol/api/v1/login/redirect",
+        "encryptionKey": "NjrMV1mjOz2iWmJpxE0i1Y7vake9qjJm",
+        "encryptionIv": "lFDePxSyLd4Zox59",
+        "expiresIn": "86400"
+    },
+    "database": {
+        "mysqlMaster": {
+            "host": "localhost",
+            "port": "8078",
+            "user": "root",
+            "password": "rootpass",
+            "database": "knol_contact",
+            "connectionLimit": 10
+        },
+        "mysqlReadSlave": {
+            "host": "localhost",
+            "port": "8078",
+            "user": "root",
+            "password": "rootpass",
+            "database": "knol_contact",
+            "connectionLimit": 10
+        }
+    }
+}
