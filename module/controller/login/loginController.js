@@ -45,7 +45,7 @@ exports.login = (req, res, next) => {
                 return res.status(401).send('Authentication failed');
             }
             // url = contact page
-            apiResponse.url = '/knol/api/v1/contacts/';
+            apiResponse.url = '/knol/pages/contacts';
             const token = util.createState(user.userId);
             res.cookie('token', token, { maxAge: 900000, httpOnly: true });
             return res.status(200).send(apiResponse);
@@ -74,7 +74,7 @@ exports.login = (req, res, next) => {
 exports.redirect = (req, res, next) => {
     // save the code
 
-    //TODO handle the failure case also i.e consent is rejected
+    // TODO handle the failure case also i.e consent is rejected
 
     const { code, state } = req.query;
     console.log(req.query);
@@ -117,7 +117,7 @@ exports.redirect = (req, res, next) => {
                 return tokenModel.addToken(tokenData);
             }).then(() => {
                 console.log('access token added in Db');
-                const apiResponse = { url: '/knol/api/v1/contacts/' };
+                const apiResponse = { url: '/knol/pages/contacts' };
                 res.cookie('token', state, { maxAge: 900000, httpOnly: true });
                 // set the cookie with some encrypted value
                 return res.status(200).send(apiResponse);

@@ -67,7 +67,7 @@ exports.getContacts = (req, res, next) => {
         userId,
     };
     tokenModel.getToken(condition).then((tokens) => {
-        if (!tokens || tokens.length < 0) {
+        if (!tokens || tokens.length <= 0) {
             return res.status(400).send('Invalid request');
         }
         const tokenFromDB = tokens[0];
@@ -75,6 +75,9 @@ exports.getContacts = (req, res, next) => {
         return listConnectionNames(oAuth2Client);
     }).then((result) => {
         let personContacts = [];
+        if (!result.data) {
+            return res.status(400).send('Bad request');
+        }
         const { connections } = result.data;
         if (connections) {
             personContacts = parsePersonDataFromConnections(connections);

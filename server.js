@@ -23,7 +23,7 @@ app.get('knol/ping', (req, res, next) => {
 require('./config/dependency')(app);
 
 app.get('/knol/pages/*', function (req, res) {
-    res.redirect(`${htmlbasePath}errorPage/error`);
+    res.redirect(`knol/pages/error`);
 });
 
 server.listen(PORT, () => {
