@@ -4,10 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 var server = require('http').createServer(app);
-const config = require('./config/configuration')
-const PORT = config.get("server:port");
-
-const htmlbasePath = '/Contacts/public/';
+const config = require('./config/configuration');
+const PORT = process.env.PORT || config.get("server:port");
 
 app.use(cors());
 app.use(bodyParser.json());
