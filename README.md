@@ -1,5 +1,5 @@
 # Knol Contacts App #
-fetch and display user's google contacts
+Fetch and display user's google contacts
 
 ## Usage ##
 
@@ -7,23 +7,23 @@ fetch and display user's google contacts
     http://localhost:8811/knol/pages/login
 
 2. After logging in, user will be redirected to google consent page
-    if he approves the consent, we will redirect teh user to contact page
+    if he approves the consent, we will redirect the user to contact page
 
 3. Site makes use of cookies
 
 ## Setup ##
 1. change the values of  following keys in the config.{environment}.json with your values.
 
-"apiKey": "",
-"clientId": "",
-"client_secret": "",
-"redirectUrl": "http://localhost:5611/knol/pages/redirect",
+*   "apiKey": "",
+*   "clientId": "",
+*   "client_secret": "",
+*   "redirectUrl": "http://localhost:5611/knol/pages/redirect",
 
 also whitelist the URLs for your project at the https://console.developers.google.com/
 
-config.development.json -- for local use
-config.production.json -- for deployment on server (in .gitignore)
-config.staging.json -- for docker
+* config.development.json -- for local use
+* config.production.json -- for deployment on server (in .gitignore)
+* config.staging.json -- for docker
 
 
 ## For Docker Setup ##
