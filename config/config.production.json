@@ -13,19 +13,17 @@
     },
     "database": {
         "mysqlMaster": {
-            "host": "localhost",
-            "port": "8078",
-            "user": "root",
-            "password": "rootpass",
-            "database": "knol_contact",
+            "host": "us-cdbr-east-02.cleardb.com",
+            "user": "b90fe1d578b966",
+            "password": "a36cbde8",
+            "database": "heroku_4045836ecf8b054",
             "connectionLimit": 10
         },
         "mysqlReadSlave": {
-            "host": "localhost",
-            "port": "8078",
-            "user": "root",
-            "password": "rootpass",
-            "database": "knol_contact",
+            "host": "us-cdbr-east-02.cleardb.com",
+            "user": "b90fe1d578b966",
+            "password": "a36cbde8",
+            "database": "heroku_4045836ecf8b054",
             "connectionLimit": 10
         }
     }
