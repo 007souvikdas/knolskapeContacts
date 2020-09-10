@@ -2,7 +2,7 @@
 const underscore = require('underscore');
 const promise = require('bluebird');
 const database = require('../../util/database');
-const exception = require('../../util/exception');
+const exception = require('../../util/exception').default;
 
 class BaseModel {
     constructor() {

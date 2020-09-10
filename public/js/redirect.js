@@ -8,7 +8,6 @@ function submitRedirect() {
     const urlParams = new URLSearchParams(queryString);
     const code = encodeURIComponent(urlParams.get("code"));
     const state = encodeURIComponent(urlParams.get("state"));
-    debugger;
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState === XMLHttpRequest.DONE) {
             if (xhttp.status == 200) {
@@ -16,6 +15,7 @@ function submitRedirect() {
                 //on success response , redirect to contacts page
                 window.location.href = res.url;
             } else {
+                alert(xhttp.response);
                 window.location.href = '/knol/pages/login';
             }
         }

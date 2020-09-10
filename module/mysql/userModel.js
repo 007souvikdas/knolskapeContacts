@@ -2,7 +2,7 @@
 const underscore = require('underscore');
 const moment = require('moment');
 const { v4: uuIdv4 } = require('uuid');
-const exception = require('../../util/exception');
+const exception = require('../../util/exception').default;
 const BaseModel = require('./baseModel');
 
 class UserModel extends BaseModel {

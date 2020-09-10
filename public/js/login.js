@@ -15,6 +15,7 @@ $('#loginForm').submit(function (event) {
         },
         error: function (response) {
             console.log("Error response:", response.responseText);
+            alert(response.responseText);
             window.location.href = '/knol/pages/login';
         }
     });

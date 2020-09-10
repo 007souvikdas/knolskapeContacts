@@ -43,7 +43,7 @@ function getContacts() {
                     const img = document.createElement('img');
                     img.className = "individual-contact-img";
                     img.src = individualContact.photoUrl;
-                    img.alt = "";
+                    // img.alt = "No Image";
                     contactDiv.appendChild(img);
 
                     const name = document.createElement('p');
@@ -64,6 +64,7 @@ function getContacts() {
                     contactsDiv.appendChild(contactDiv);
                 }
             } else {
+                alert(xhttp.response);
                 window.location.href = '/knol/pages/login';
             }
         }

@@ -15,7 +15,6 @@ const UserModel = require('../../mysql/userModel');
 const TokenModel = require('../../mysql/tokenModel');
 
 function authorizeUrl(userState) {
-    console.log('clientId:', clientId, 'client_secret:', clientSecret);
 
     const oAuth2Client = new google.auth.OAuth2(
         clientId, clientSecret, redirectUris,
@@ -31,7 +30,6 @@ exports.login = (req, res, next) => {
     const { userName, password } = req.body;
     const apiResponse = {};
     res.clearCookie('token');
-    console.log(userName, 'and ', password);
     const hash = util.createHash(password);
     // check if user is present and its hash matching
     const userModel = new UserModel();
