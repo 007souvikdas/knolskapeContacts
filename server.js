@@ -20,8 +20,8 @@ app.get('/knol/ping', (req, res, next) => {
 
 require('./config/dependency')(app);
 
-app.get('/knol/pages/*', function (req, res) {
-    res.redirect(`/knol/pages/error`);
+app.get('/*', function (req, res) {
+    res.redirect(`/knol/pages/login`);
 });
 
 server.listen(PORT, () => {
