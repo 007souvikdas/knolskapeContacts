@@ -75,9 +75,6 @@ exports.getContacts = (req, res, next) => {
         isActive: 1,
         userId,
     };
-    // oAuth2Client.on('tokens', (tokens) => {
-    //     console.log('refresh token returned:', tokens);
-    // });
 
     tokenModel.getToken(condition).then((tokens) => {
         if (!tokens || tokens.length <= 0) {
