@@ -8,7 +8,7 @@ $('#loginForm').submit(function (event) {
         url: post_url,
         type: request_method,
         data: form_data,
-        success: function (response) { //
+        success: function (response) { 
             //redirect to url
             // console.log(response);
             window.location.href = response.url;

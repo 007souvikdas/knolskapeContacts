@@ -1,10 +1,11 @@
 {
   "name": "knolskape_contacts",
   "version": "1.0.0",
-  "description": "",
+  "description": "Fetch Google contacts",
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=development node server.js",
+    "stage": "NODE_ENV=staging node server.js",
     "prod": "NODE_ENV=production node server.js"
   },
   "author": "Souvik Das",
@@ -23,7 +24,7 @@
     "node-exceptions": "^4.0.1",
     "promise": "^8.1.0",
     "underscore": "^1.11.0",
-    "uuid": "^8.3.0"
+    "uuid": "^7.0.3"
   },
   "devDependencies": {
     "eslint": "^7.8.1",

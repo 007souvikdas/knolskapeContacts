@@ -6,8 +6,9 @@ function submitRedirect() {
     var xhttp = new XMLHttpRequest();
     var queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const code = encodeURI(urlParams.get("code"));
-    const state = encodeURI(urlParams.get("state"));
+    const code = encodeURIComponent(urlParams.get("code"));
+    const state = encodeURIComponent(urlParams.get("state"));
+    debugger;
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState === XMLHttpRequest.DONE) {
             if (xhttp.status == 200) {

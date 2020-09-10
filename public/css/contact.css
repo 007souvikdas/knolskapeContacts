@@ -119,11 +119,7 @@ body{
 }
 .static-header{
     position: absolute;
-    /* width: 36px; */
-    /* height: 18px; */
-    
-    /* top: 165px; */
-    top: -0.6%;
+    top: -16px;
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
@@ -138,6 +134,7 @@ body{
 .name-header{
     position: relative;
     left: 9%;
+    top:2px
 }
 
 .email-header{

@@ -1,0 +1,45 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+    - 9001:3306
+    volumes:
+    - ./.db/:/var/lib/mysql
+    networks:
+    - app-network
+    environment:
+    - MYSQL_ROOT_PASSWORD=rootpass
+    - MYSQL_DATABASE=knol_contact
+    - MYSQL_USER=admin
+    - MYSQL_PASSWORD=pass123
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.8
+    ports:
+    - 9079:80
+    links:
+    - mysql:db
+    depends_on:
+    - mysql
+    networks: 
+    - app-network
+    environment:
+    - MYSQL_ROOT_PASSWORD=rootpass
+    - MYSQL_DATABASE=knol_contact
+    - MYSQL_USER=admin
+    - MYSQL_PASSWORD=pass123
+    
+  knol:
+    build:
+      context: ./    
+    ports:
+    - 8811:8811
+    depends_on:
+    - mysql
+    networks:
+    - app-network
+
+networks:
+  app-network:
+    driver: bridge

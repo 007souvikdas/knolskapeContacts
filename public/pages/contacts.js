@@ -43,6 +43,7 @@ function getContacts() {
                     const img = document.createElement('img');
                     img.className = "individual-contact-img";
                     img.src = individualContact.photoUrl;
+                    img.alt = "";
                     contactDiv.appendChild(img);
 
                     const name = document.createElement('p');
