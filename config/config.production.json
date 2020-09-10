@@ -3,27 +3,27 @@
         "port": "5611"
     },
     "security": {
-        "apiKey": "AIzaSyDvUxj0iSNB9tnOzPApB4gUP6fhw58ixaw",
-        "clientId": "524323970496-6ri5o8nnd3elmb8nhsfm3g26jh65sis4.apps.googleusercontent.com",
-        "client_secret": "xIcmoa-YkS8_tQ3iLh0svuIK",
-        "redirectUrl": "https://knol-contacts.herokuapp.com/knol/pages/redirect",
-        "encryptionKey": "NjrMV1mjOz2iWmJpxE0i1Y7vake9qjJm",
-        "encryptionIv": "lFDePxSyLd4Zox59",
+        "apiKey": "",
+        "clientId": "",
+        "client_secret": "",
+        "redirectUrl": "https://localhosy:5611/knol/pages/redirect",
+        "encryptionKey": "",
+        "encryptionIv": "",
         "expiresIn": "86400"
     },
     "database": {
         "mysqlMaster": {
-            "host": "us-cdbr-east-02.cleardb.com",
-            "user": "b90fe1d578b966",
-            "password": "a36cbde8",
-            "database": "heroku_4045836ecf8b054",
+            "host": "",
+            "user": "",
+            "password": "",
+            "database": "",
             "connectionLimit": 10
         },
         "mysqlReadSlave": {
-            "host": "us-cdbr-east-02.cleardb.com",
-            "user": "b90fe1d578b966",
-            "password": "a36cbde8",
-            "database": "heroku_4045836ecf8b054",
+            "host": "",
+            "user": "",
+            "password": "",
+            "database": "",
             "connectionLimit": 10
         }
     }
