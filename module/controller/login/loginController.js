@@ -43,6 +43,7 @@ exports.login = (req, res, next) => {
             // user found
             const user = users[0];
             if (hash !== user.password) {
+                console.log('User authentication failed');
                 return res.status(401).send('Authentication failed');
             }
             // url = contact page
@@ -50,6 +51,7 @@ exports.login = (req, res, next) => {
             apiResponse.url = '/knol/pages/contacts';
             const token = util.createState(user.userId);
             res.cookie('token', token, { maxAge: 900000, httpOnly: true });
+            console.log('User already exists, redirecting to list person contacts API');
             return res.status(200).send(apiResponse);
         }
 
@@ -64,18 +66,19 @@ exports.login = (req, res, next) => {
             console.log('user created');
             const state = util.createState(data.userId);
             apiResponse.url = authorizeUrl(state);
-            console.log('auth genearted');
+            console.log('User Auth url created , redirecting there...');
             return res.status(200).send(apiResponse);
-        }).catch((err) => res.status(500).send('failed to create user'));
+        }).catch((err) => {
+            console.log('Error durig login', err);
+            res.status(500).send('failed to create user');
+        });
     }).catch((err) => {
-        console.log(err);
+        console.log('Unwanted error crept in!. Detailed error:', err);
         res.status(500).send('general Error');
     });
 };
 
 exports.redirect = (req, res, next) => {
-    // save the code
-
     // TODO handle the failure case also i.e consent is rejected
 
     const { code, state } = req.query;
@@ -85,6 +88,7 @@ exports.redirect = (req, res, next) => {
     const tokenModel = new TokenModel();
 
     if (!decodedUserId) {
+        console.log('Invalid state param, unabel to decrypt it');
         return res.status(400).send('Invalid state');
     }
     const oAuth2Client = new google.auth.OAuth2(
@@ -115,7 +119,7 @@ exports.redirect = (req, res, next) => {
                     token_type: token.token_type,
                     expiry_date: token.expiry_date,
                 };
-
+                console.log('User Active status updated');
                 return tokenModel.addToken(tokenData);
             }).then(() => {
                 console.log('access token added in Db');
@@ -130,5 +134,6 @@ exports.redirect = (req, res, next) => {
 exports.deleteCookie = (req, res, next) => {
     // delete the cookies
     res.clearCookie('token');
+    console.log('Cookie removed');
     res.status(200).send('Cookie cleared');
 };

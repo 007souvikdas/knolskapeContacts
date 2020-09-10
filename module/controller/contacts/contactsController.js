@@ -16,12 +16,11 @@ function listConnectionNames(auth) {
     });
 }
 function getUserProfile(auth) {
-    var oauth2 = google.oauth2({ auth: auth, version: 'v2' });
+    const oauth2 = google.oauth2({ auth, version: 'v2' });
     return oauth2.userinfo.v2.me.get({
         resourceName: 'people/me',
     });
 }
-
 
 function parsePersonDataFromConnections(connections) {
     const personContacts = [];
@@ -55,12 +54,14 @@ function parsePersonDataFromConnections(connections) {
 
 exports.getContacts = (req, res, next) => {
     const { token } = req.cookies;
-    let apiResponse = {};
+    const apiResponse = {};
     if (!token) {
+        console.log('Cookie not present');
         return res.status(400).send('Missing token');
     }
     const userId = util.decodeState(token);
     if (!userId) {
+        console.log('Invalild token');
         return res.status(400).send('Invalid token');
     }
     // userId is valid and our token was valid
@@ -74,8 +75,13 @@ exports.getContacts = (req, res, next) => {
         isActive: 1,
         userId,
     };
+    // oAuth2Client.on('tokens', (tokens) => {
+    //     console.log('refresh token returned:', tokens);
+    // });
+
     tokenModel.getToken(condition).then((tokens) => {
         if (!tokens || tokens.length <= 0) {
+            console.log('No Active token found for the user');
             return res.status(400).send('Invalid request');
         }
         const tokenFromDB = tokens[0];
@@ -84,9 +90,10 @@ exports.getContacts = (req, res, next) => {
         return getUserProfile(oAuth2Client);
     }).then((result) => {
         if (!result.data) {
+            console.log('No Data present ');
             return res.status(400).send('Bad request');
         }
-        const data = result.data;
+        const { data } = result;
         apiResponse.userName = data.name;
         apiResponse.userEmail = data.email;
         apiResponse.photoUrl = data.picture;
@@ -102,9 +109,11 @@ exports.getContacts = (req, res, next) => {
             personContacts = parsePersonDataFromConnections(connections);
         }
         apiResponse.contacts = personContacts;
+        console.log('Returned list of person contacts');
         return res.status(200).send(apiResponse);
-    }).catch((err) => {
-        console.log('error while fetching the token', err);
-        res.status(400).send('Bad request');
-    });
+    })
+        .catch((err) => {
+            console.log('error while fetching the token', err);
+            res.status(400).send('Bad request');
+        });
 };
