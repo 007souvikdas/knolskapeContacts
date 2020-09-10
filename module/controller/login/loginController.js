@@ -46,6 +46,7 @@ exports.login = (req, res, next) => {
                 return res.status(401).send('Authentication failed');
             }
             // url = contact page
+
             apiResponse.url = '/knol/pages/contacts';
             const token = util.createState(user.userId);
             res.cookie('token', token, { maxAge: 900000, httpOnly: true });

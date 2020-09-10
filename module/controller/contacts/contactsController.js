@@ -79,6 +79,7 @@ exports.getContacts = (req, res, next) => {
             return res.status(400).send('Invalid request');
         }
         const tokenFromDB = tokens[0];
+        // TODO check for token expiry, if expired renew it here
         oAuth2Client.setCredentials(tokenFromDB);
         return getUserProfile(oAuth2Client);
     }).then((result) => {
