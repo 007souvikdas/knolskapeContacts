@@ -27,7 +27,7 @@ body{
     height: 85%;
     top: 9%;
 
-    background: url(.png), #C4C4C4;
+    background: #C4C4C4;
     border: 2px solid #FFFFFF;
     border-radius: 50%;
     box-sizing: border-box;
@@ -168,7 +168,6 @@ body{
     /* height: 40px; */
     left: 2%;
     top: 8px;
-    background: url(.jpg);
     border: 1px solid #FF0000;
     box-sizing: border-box;
     border-radius: 50%;

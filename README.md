@@ -4,7 +4,7 @@ Fetch and display user's google contacts
 ## Usage ##
 
 1. To login browse at :
-    http://localhost:8811/knol/pages/login
+    http://localhost:8811/knol/login
 
 2. After logging in, user will be redirected to google consent page
     if he approves the consent, we will redirect the user to contact page
@@ -17,7 +17,7 @@ Fetch and display user's google contacts
 *   "apiKey": "",
 *   "clientId": "",
 *   "client_secret": "",
-*   "redirectUrl": "http://localhost:5611/knol/pages/redirect",
+*   "redirectUrl": "http://localhost:5611/knol/redirect",
 
 also whitelist the URLs for your project at the https://console.developers.google.com/
 
@@ -29,7 +29,7 @@ also whitelist the URLs for your project at the https://console.developers.googl
 ## For Docker Setup ##
 
 1. change the redirectUrl in config.staging.json to system IP (where service is deployed), otherwise let it be same(if testing locally)
-i.e     "redirectUrl": "http://{SYSTEM_IP}:8811/knol/pages/redirect",
+i.e     "redirectUrl": "http://{SYSTEM_IP}:8811/knol/redirect",
 
 Also, Need to whitelist this IP in the console.developers.google.com
 

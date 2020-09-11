@@ -2,29 +2,10 @@
 
 <head>
     <title>Knolskape contacts</title>
-    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
-    <div id="background-img">
-        <img class="stretch" src="../images/background.png" />        
-    </div>
-    
-    <div class="signIn-rectangle">
-        <img class="google-img" src="../images/google.png" />
-        <p class="login-text">Sign in with Google</p>
-        <form id="loginForm" action="/knol/api/v1/user/login" method="POST">
-            <input class="form-text" id="email" name="userName" placeholder="Email" type="text" />
-            <br />
-            <br />
-            <input class="form-text" name="password" id="password" type="password" placeholder="Password" />
-            <input class="signIn-Button" type="submit" />
-            <p class="error-Message" id = "errorMessage"></p>
-        </form>
-    </div>
-    
+    <div id="loginBody"></div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="../js/login.js"></script>
 
 </html>

@@ -10,7 +10,7 @@ const PORT = process.env.PORT || config.get("server:port");
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/knol', express.static('public', {
+app.use('/knol', express.static('build', {
     extensions: ['html'],
 }));
 
@@ -21,7 +21,7 @@ app.get('/knol/ping', (req, res, next) => {
 require('./config/dependency')(app);
 
 app.get('/*', function (req, res) {
-    res.redirect(`/knol/pages/login`);
+    res.redirect(`/knol/login`);
 });
 
 server.listen(PORT, () => {

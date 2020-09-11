@@ -6,7 +6,7 @@
         "apiKey": "AIzaSyDvUxj0iSNB9tnOzPApB4gUP6fhw58ixaw",
         "clientId": "524323970496-6ri5o8nnd3elmb8nhsfm3g26jh65sis4.apps.googleusercontent.com",
         "client_secret": "xIcmoa-YkS8_tQ3iLh0svuIK",
-        "redirectUrl": "http://localhost:5611/knol/pages/redirect",
+        "redirectUrl": "http://localhost:5611/knol/redirect",
         "encryptionKey": "NjrMV1mjOz2iWmJpxE0i1Y7vake9qjJm",
         "encryptionIv": "lFDePxSyLd4Zox59",
         "expiresIn": "86400"

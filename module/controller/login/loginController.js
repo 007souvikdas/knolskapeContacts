@@ -48,7 +48,7 @@ exports.login = (req, res, next) => {
             }
             // url = contact page
 
-            apiResponse.url = '/knol/pages/contacts';
+            apiResponse.url = '/knol/contacts';
             const token = util.createState(user.userId);
             res.cookie('token', token, { maxAge: 900000, httpOnly: true });
             console.log('User already exists, redirecting to list person contacts API');
@@ -123,7 +123,8 @@ exports.redirect = (req, res, next) => {
                 return tokenModel.addToken(tokenData);
             }).then(() => {
                 console.log('access token added in Db');
-                const apiResponse = { url: '/knol/pages/contacts' };
+                const apiResponse = { url: '/knol/contacts' };
+                //expire in 15 minutes
                 res.cookie('token', state, { maxAge: 900000, httpOnly: true });
                 // set the cookie with some encrypted value
                 return res.status(200).send(apiResponse);

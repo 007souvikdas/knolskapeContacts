@@ -4,7 +4,9 @@
   "description": "Fetch Google contacts",
   "main": "server.js",
   "scripts": {
+    "build": "webpack --mode production",
     "start": "NODE_ENV=production node server.js",
+    "heroku-postbuild": "webpack -p",
     "stage": "NODE_ENV=staging node server.js",
     "prod": "NODE_ENV=production node server.js"
   },
@@ -24,13 +26,29 @@
     "nconf": "^0.10.0",
     "node-exceptions": "^4.0.1",
     "promise": "^8.1.0",
+    "query-string": "^6.13.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "underscore": "^1.11.0",
     "uuid": "^7.0.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-react": "^7.10.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^4.3.0",
     "eslint": "^7.8.1",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0"
+    "eslint-plugin-import": "^2.22.0",
+    "file-loader": "^6.1.0",
+    "html-webpack-plugin": "^4.4.1",
+    "react-router-dom": "^5.2.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "engines": {
     "node": "10.x"
