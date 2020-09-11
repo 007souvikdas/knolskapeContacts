@@ -26,7 +26,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                Redirect Page
+                Authentication Succesful . Redirecting...
             </div >
         );
     }

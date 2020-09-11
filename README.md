@@ -7,12 +7,17 @@ Fetch and display user's google contacts
     http://localhost:8811/knol/login
 
 2. After logging in, user will be redirected to google consent page
-    if he approves the consent, we will redirect the user to contact page
+    if user approves the consent, we will redirect the user to contact details page.
 
-3. Site makes use of cookies
+3. User can logout after viewing contact details
+
+4. NO deletion operation possible
+
+5. Site makes use of cookies
 
 ## Setup ##
-1. change the values of  following keys in the config.{environment}.json with your values.
+
+1. change the values of following keys in the config.{environment}.json with your values.
 
 *   "apiKey": "",
 *   "clientId": "",
@@ -42,3 +47,13 @@ command for creating DB and table by using the above file:
 
 3. PHPMyAdmin page is at : localhsot:9079
     Use it to visualize the data better
+
+
+## Future Enhacements ##
+
+* add loaders on screen
+
+
+## Support ##
+
+* Please drop a mail at souvikddss@gmail.com for more support
